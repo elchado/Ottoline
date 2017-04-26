@@ -1,10 +1,22 @@
-= image_tag @book.image.url(:medium)
-%h1= @book.title
-%p= @book.description
+#pin_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-headig.book_image
+				= image_tag @book.image.url(:medium)
+			.panel-body
+				%h1= @book.title
+				%p.description= @book.description
 
-Submitted by
-%p= @book.user.email
-
-= link_to "Back", root_path
-= link_to "Edit", edit_book_path
-= link_to "Delete", book_path, method: :delete,  data: { confirm: "Are you sure" }
+				Submitted by
+				%p= @book.user.email
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+						Submitted by
+						= @book.user.email
+					.col-md-6
+						.btn-group.pull-right
+							= link_to "Back", root_path, class: "btn btn-default"		
+							= link_to "Edit", edit_book_path, class: "btn btn-default"		
+							= link_to "Delete", book_path, method: :delete,  data: { confirm: "Are you sure" }, class: "btn btn-default"		
