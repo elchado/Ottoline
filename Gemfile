@@ -27,6 +27,7 @@ gem 'haml', '~> 4.0.7'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'simple_form', '~> 3.4'
 gem 'devise', '~> 4.2.1'
+gem 'paperclip', '~> 5.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
