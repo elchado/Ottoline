@@ -1,0 +1,9 @@
+%h1= @book.title
+%p= @book.description
+
+Submitted by
+%p= @book.user.email
+
+= link_to "Back", root_path
+= link_to "Edit", edit_book_path
+= link_to "Delete", book_path, method: :delete,  data: { confirm: "Are you sure" }
