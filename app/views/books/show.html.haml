@@ -17,6 +17,9 @@
 						= @book.user.email
 					.col-md-6
 						.btn-group.pull-right
+							= link_to like_book_path(@book), method: :put, class: "btn btn-default" do
+								%span.glyphicon.glyphicon-heart
+									= @book.get_upvotes.size
 							= link_to "Back", root_path, class: "btn btn-default"		
 							= link_to "Edit", edit_book_path, class: "btn btn-default"		
 							= link_to "Delete", book_path, method: :delete,  data: { confirm: "Are you sure" }, class: "btn btn-default"		

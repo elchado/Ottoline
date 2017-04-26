@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-	before_action :find_book, only: [:show, :edit, :update, :destroy]
+	before_action :find_book, only: [:show, :edit, :update, :destroy, :upvote]
 	def index
 		@books = Book.all.order("created_at DESC")
 	end 
@@ -36,6 +36,11 @@ class BooksController < ApplicationController
 	def destroy
 		@book.destroy 
 		redirect_to root_path
+	end
+
+	def upvote
+		@book.upvote_by current_user
+		redirect_to :back
 	end
 
 
